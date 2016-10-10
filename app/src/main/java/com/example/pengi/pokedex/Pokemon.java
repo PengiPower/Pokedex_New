@@ -1,38 +1,10 @@
 package com.example.pengi.pokedex;
 
-/**
- * Created by Pengi on 3/10/2016.
- */
 public class Pokemon {
-    private int id;
-    private double height;
-    private double weight;
+
+    private int number;
     private String name;
-    private String imageUrl;
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    public double getHeight() {
-        return height;
-    }
-
-    public void setHeight(double height) {
-        this.height = height;
-    }
-
-    public double getWeight() {
-        return weight;
-    }
-
-    public void setWeight(double weight) {
-        this.weight = weight;
-    }
+    private String url;
 
     public String getName() {
         return name;
@@ -42,28 +14,20 @@ public class Pokemon {
         this.name = name;
     }
 
-    public String getImageUrl() {
-        if (imageUrl == null)
-            this.imageUrl = "http://assets.pokemon.com/assets/cms2/img/pokedex/full/"
-                    + getFormattedId(id) + ".png";
-
-        return imageUrl;
+    public String getUrl() {
+        return url;
     }
 
-    public void setImageUrl(String imageURL) {
-        this.imageUrl = imageUrl;
+    public void setUrl(String url) {
+        this.url = url;
     }
 
-    public static String getFormattedId(int id) {
-        String formattedId;
+    public int getNumber() {
+        String[] urlPart = url.split("/");
+        return Integer.parseInt(urlPart[urlPart.length - 1]);
+    }
 
-        if (id < 10)
-            formattedId = "00" + id;
-        else if (id < 100)
-            formattedId = "0" + id;
-        else
-            formattedId = String.valueOf(id);
-
-        return formattedId;
+    public void setNumber(int number) {
+        this.number = number;
     }
 }
