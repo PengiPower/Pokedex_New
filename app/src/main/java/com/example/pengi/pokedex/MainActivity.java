@@ -74,8 +74,8 @@ public class MainActivity extends AppCompatActivity {
                 isEnd = true;
                 if (response.isSuccessful()) {
 
-                    Pokedex pokemonRespuesta = response.body();
-                    ArrayList<Pokemon> pokemonList = pokemonRespuesta.getResults();
+                    Pokedex pokedex = response.body();
+                    ArrayList<Pokemon> pokemonList = pokedex.getResults();
 
                     pokemonAdapter.addPokemonList(pokemonList);
 
