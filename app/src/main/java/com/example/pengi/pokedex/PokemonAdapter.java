@@ -40,10 +40,8 @@ public class PokemonAdapter extends RecyclerView.Adapter<PokemonAdapter.ViewHold
         holder.imageView.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 Intent intent = new Intent(holder.itemView.getContext(), PokemonDetails.class);
+                intent.putExtra("Name", p.getName());
                 intent.putExtra("Number", p.getNumber());
-                intent.putExtra("Weight", p.getWeight());
-                intent.putExtra("Height", p.getHeight());
-                intent.putExtra("Abilities", p.getAbilities());
                 holder.itemView.getContext().startActivity(intent);
             }
         });

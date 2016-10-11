@@ -12,36 +12,24 @@ import com.bumptech.glide.Glide;
 public class PokemonDetails extends AppCompatActivity {
     private ImageView imageView;
     private TextView id;
-    private TextView pokemonWeight;
-    private TextView pokemonHeight;
-    private TextView pokemonAbilities;
+    private TextView pokemonName;
 
-    private String number;
-    private String weight;
-    private String height;
-    private String abilities;
-
+    private String name;
+    private int number;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.pokemon_details);
 
+        pokemonName = (TextView)findViewById(R.id.pokemonName);
         id = (TextView)findViewById(R.id.pokemonId);
-        pokemonHeight = (TextView)findViewById(R.id.pokemonHeight);
-        pokemonWeight = (TextView)findViewById(R.id.pokemonWeight);
-        pokemonAbilities = (TextView)findViewById(R.id.pokemonAbilities);
         imageView = (ImageView)findViewById(R.id.pokemonImage);
 
         Intent intent = getIntent();
-        number = intent.getStringExtra("Number");
-        weight = intent.getStringExtra("Weight");
-        height = intent.getStringExtra("Height");
-        abilities = intent.getStringExtra("Abilities");
-
+        name = intent.getStringExtra("Name");
+        number = intent.getIntExtra("Number", 1);
+        pokemonName.setText("Name: " + name);
         id.setText("ID: " + number);
-        pokemonWeight.setText("Weight: " + weight + " kg");
-        pokemonHeight.setText("Height: " + height + " cm");
-        pokemonAbilities.setText("Abilities : " + abilities);
         Glide.with(this).load("http://pokeapi.co/media/sprites/pokemon/" + number + ".png").into(imageView);
     }
 }
