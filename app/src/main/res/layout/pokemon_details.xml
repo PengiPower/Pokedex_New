@@ -5,8 +5,7 @@
 
     <ImageView
         android:layout_width="200dp"
-        android:layout_height="200dp"
-        android:layout_weight="0.06"
+        android:layout_height="179dp"
         android:id="@+id/pokemonImage"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true" />
@@ -15,16 +14,15 @@
         android:text="TextView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/pokemonName"
-        android:layout_weight="0.06"
+        android:id="@+id/pokemonId"
+        android:layout_weight="0.00"
         android:textAllCaps="true"/>
 
     <TextView
         android:text="TextView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/pokemonId"
-        android:layout_weight="0.06"
+        android:id="@+id/pokemonName"
         android:textAllCaps="true"/>
 
 </LinearLayout>
